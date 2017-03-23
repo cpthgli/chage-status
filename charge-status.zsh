@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 THRESHOLD_CURRENT=1200000
-THRESHOLD_CAPACITY_HIGH=90
+THRESHOLD_CAPACITY_HIGH=85
 THRESHOLD_CAPACITY_MIDDLE=50
 THRESHOLD_CAPACITY_LOW=20
 
@@ -28,8 +28,7 @@ unpluged_notify() {
 		-a $APP_NAME \
 		-i $WORKSPACE_ROOT"/icons/plug_icon.png" \
 		"Unpluged." \
-		$WORKSPACE_ROOT
-		# "/sys/class/power_supply/BAT0/status = "$(get_status)
+		"/sys/class/power_supply/BAT0/status = "$(get_status)
 }
 low_current_notify() {
 	notify-send \
